@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import Modal from './Modal';
@@ -33,7 +34,7 @@ const RegisterModal = () => {
         registerModal.onClose();
       })
       .catch(error => {
-        console.log(error);
+        toast.error('Something went wrong.');
       })
       .finally(() => {
         setIsLoading(false);
