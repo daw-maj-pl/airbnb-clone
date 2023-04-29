@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import { AiFillGithub } from 'react-icons/ai';
+import { signIn } from 'next-auth/react';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -88,7 +89,7 @@ const RegisterModal = () => {
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div
         className="
